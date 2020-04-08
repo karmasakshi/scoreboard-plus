@@ -19,7 +19,27 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@sp-package.json": [
+        "package.json"
+      ],
+      "@sp-environments/*": [
+        "src/environments/*"
+      ],
+      "@sp-components/*": [
+        "src/app/components/*"
+      ],
+      "@sp-constants/*": [
+        "src/app/constants/*"
+      ],
+      "@sp-interfaces/*": [
+        "src/app/interfaces/*"
+      ],
+      "@sp-services/*": [
+        "src/app/services/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
