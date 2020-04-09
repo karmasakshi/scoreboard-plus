@@ -5,7 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
@@ -18,6 +20,7 @@ import { ScoreboardPageComponent } from '@sp-components/scoreboard-page/scoreboa
 import { ScoreboardTableComponent } from '@sp-components/scoreboard-table/scoreboard-table.component';
 import { ENVIRONMENT } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
+import { RoundScoresBottomSheetComponent } from '@sp-components/round-scores-bottom-sheet/round-scores-bottom-sheet.component';
 
 @NgModule({
   bootstrap: [
@@ -28,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     MainComponent,
     PageComponent,
     ScoreboardPageComponent,
-    ScoreboardTableComponent
+    ScoreboardTableComponent,
+    RoundScoresBottomSheetComponent
   ],
   imports: [
     AngularFireModule.initializeApp(ENVIRONMENT.firebaseConfiguration),
@@ -37,7 +41,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
+    MatListModule,
     MatProgressBarModule,
     MatSnackBarModule,
     MatTableModule,

@@ -2,6 +2,7 @@
 - Total column
 - Ability to pin a column
 - Adding players
+- Adding scores
 - Removing players
 - Favicons
 - Social tags
@@ -9,10 +10,15 @@
 - Copying URL
 - Share sheet
 - Responsiveness
+- Sharing ranking to WhatsApp
 - Header and branding
 - SEO text
 - Translations
+- Deleting scoreboard
+- console checking
+- Performance module
 - Firestore rules
+- Smaller screen hero overflowing
 - Snackbar button color
 - Accessibility
 - Update script

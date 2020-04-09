@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { COLLECTIONS } from '@sp-constants/collections';
 import { Scoreboard } from '@sp-interfaces/scoreboard';
 import { User } from 'firebase';
+import { Participant } from '@sp-interfaces/participant';
 
 @Component({
   selector: 'sp-scoreboard-page',
@@ -19,6 +20,7 @@ export class ScoreboardPageComponent implements OnInit {
   public isUserOwner: boolean;
   public scoreboard: Scoreboard;
   public scoreboardFormGroup: FormGroup;
+  public participantFormGroup: FormGroup;
 
   private user: null | User;
 
@@ -40,6 +42,10 @@ export class ScoreboardPageComponent implements OnInit {
 
     this.scoreboardFormGroup = new FormGroup({
       title: new FormControl('Antakshari')
+    });
+
+    this.participantFormGroup = new FormGroup({
+      name: new FormControl('')
     });
 
     // this.user;
@@ -64,11 +70,13 @@ export class ScoreboardPageComponent implements OnInit {
 
   }
 
-  public updateScoreboard(): void {
+  public updateTitle(): void {
 
     this.isComponentLoading = true;
 
-    this.angularFirestore.collection<Scoreboard>(COLLECTIONS.SCOREBOARDS).doc<Scoreboard>(this.scoreboard.id).update({ title: this.scoreboardFormGroup.value.title }).then(
+    this.scoreboard.title = this.scoreboardFormGroup.value.title;
+
+    this.angularFirestore.collection<Scoreboard>(COLLECTIONS.SCOREBOARDS).doc<Scoreboard>(this.scoreboard.id).set(this.scoreboard).then(
 
       (): void => {
 
@@ -78,7 +86,48 @@ export class ScoreboardPageComponent implements OnInit {
 
     ).catch(
 
-      (error: Error): void => { }
+      (error: Error): void => {
+
+        this.matSnackBar.open(error.message);
+
+        this.isComponentLoading = false;
+
+      }
+
+    );
+
+  }
+
+  public addParticipant(): void {
+
+    this.isComponentLoading = true;
+
+    const participant: Participant = {
+      id: this.angularFirestore.createId(),
+      name: this.participantFormGroup.value.name
+    };
+
+    this.scoreboard.participants.push(participant);
+
+    this.angularFirestore.collection<Scoreboard>(COLLECTIONS.SCOREBOARDS).doc<Scoreboard>(this.scoreboard.id).set(this.scoreboard).then(
+
+      (): void => {
+
+        this.participantFormGroup.reset();
+
+        this.isComponentLoading = false;
+
+      }
+
+    ).catch(
+
+      (error: Error): void => {
+
+        this.matSnackBar.open(error.message);
+
+        this.isComponentLoading = false;
+
+      }
 
     );
 
@@ -118,6 +167,12 @@ export class ScoreboardPageComponent implements OnInit {
       }
 
     }
+
+  }
+
+  public addRoundScores(): void {
+
+    // open bottom sheet
 
   }
 
