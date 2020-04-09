@@ -43,6 +43,14 @@ export class HomePageComponent implements OnInit {
 
         this.isComponentLoading = false;
 
+      },
+
+      (error: Error): void => {
+
+        this.matSnackBar.open(error.message);
+
+        this.isComponentLoading = false;
+
       }
 
     );
@@ -99,14 +107,15 @@ export class HomePageComponent implements OnInit {
 
     const scoreboard: Scoreboard = {
       id: this.angularFirestore.createId(),
-      ownerUid: userUid
+      ownerUid: userUid,
+      title: ''
     };
 
-    this.angularFirestore.collection(COLLECTIONS.SCOREBOARDS).doc(scoreboard.id).set(scoreboard).then(
+    this.angularFirestore.collection<Scoreboard>(COLLECTIONS.SCOREBOARDS).doc<Scoreboard>(scoreboard.id).set(scoreboard).then(
 
       (): void => {
 
-        this.router.navigate(['scoreboard/' + scoreboard.id, 'edit']);
+        this.router.navigate(['scoreboard/' + scoreboard.id]);
 
       }
 

@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,9 +14,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { HomePageComponent } from '@sp-components/home-page/home-page.component';
 import { MainComponent } from '@sp-components/main/main.component';
 import { PageComponent } from '@sp-components/page/page.component';
-import { ScoreboardEditorPageComponent } from '@sp-components/scoreboard-editor-page/scoreboard-editor-page.component';
 import { ScoreboardPageComponent } from '@sp-components/scoreboard-page/scoreboard-page.component';
-import { ScoreboardComponent } from '@sp-components/scoreboard/scoreboard.component';
 import { ENVIRONMENT } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,15 +26,16 @@ import { AppRoutingModule } from './app-routing.module';
     HomePageComponent,
     MainComponent,
     PageComponent,
-    ScoreboardEditorPageComponent,
-    ScoreboardPageComponent,
-    ScoreboardComponent
+    ScoreboardPageComponent
   ],
   imports: [
     AngularFireModule.initializeApp(ENVIRONMENT.firebaseConfiguration),
     AngularFirestoreModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatProgressBarModule,
     MatSnackBarModule,
     BrowserModule,
