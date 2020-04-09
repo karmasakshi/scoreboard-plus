@@ -1,2 +1,19 @@
 - /: START button gets enabled before routing thereby allowing repeated clicks
-- Remove PWA features
+- Total column
+- Ability to pin a column
+- Adding players
+- Removing players
+- Favicons
+- Social tags
+- Lint
+- Copying URL
+- Share sheet
+- Responsiveness
+- Header and branding
+- SEO text
+- Translations
+- Firestore rules
+- Snackbar button color
+- Accessibility
+- Update script
+- Release script
