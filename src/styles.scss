@@ -1,7 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* --- Global Styles --- */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background: #e3e3e3;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+/* --- Angular Material Overrides --- */
+
+.mat-card {
+  overflow: hidden;
+}
+
+.mat-card-header-text {
+  margin: 0 !important;
+}
+
+.mat-form-field {
+  display: block !important;
+}
+
+.mat-table {
+  min-width: 1024px;
+}
 
 /* --- Custom Styles --- */
 
@@ -11,4 +32,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .sp-page {
   padding: 24px;
+}
+
+.sp-table-container {
+  overflow-x: auto;
 }

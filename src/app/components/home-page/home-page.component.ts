@@ -108,6 +108,8 @@ export class HomePageComponent implements OnInit {
     const scoreboard: Scoreboard = {
       id: this.angularFirestore.createId(),
       ownerUid: userUid,
+      participants: [],
+      roundScores: [],
       title: ''
     };
 

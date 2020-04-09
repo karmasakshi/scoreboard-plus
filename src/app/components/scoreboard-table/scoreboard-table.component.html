@@ -1,0 +1,26 @@
+<div class="sp-table-container">
+
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="roundNumber">
+      <th mat-header-cell *matHeaderCellDef>Round No.</th>
+      <td mat-cell *matCellDef="let element">{{element.roundNumber}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="roundName">
+      <th mat-header-cell *matHeaderCellDef> Round Name </th>
+      <td mat-cell *matCellDef="let element">{{element.roundName}}</td>
+    </ng-container>
+
+    <ng-container *ngFor="let participant of participants" [matColumnDef]="participant.id">
+      <th mat-header-cell *matHeaderCellDef>{{ participant.name }}</th>
+      <td mat-cell *matCellDef="let element"> {{element[participant.id]}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+
+</div>

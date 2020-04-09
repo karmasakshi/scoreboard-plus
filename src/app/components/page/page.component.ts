@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  @Input() isProgressBarVisible?: boolean = false;
-  @Input() progressBarMode?: 'buffer' | 'indeterminate' = 'indeterminate';
+  @Input() public isProgressBarVisible?: boolean = false;
+  @Input() public progressBarMode?: 'buffer' | 'indeterminate' = 'indeterminate';
 
   public constructor() { }
 

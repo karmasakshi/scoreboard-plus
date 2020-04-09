@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -15,6 +16,7 @@ import { HomePageComponent } from '@sp-components/home-page/home-page.component'
 import { MainComponent } from '@sp-components/main/main.component';
 import { PageComponent } from '@sp-components/page/page.component';
 import { ScoreboardPageComponent } from '@sp-components/scoreboard-page/scoreboard-page.component';
+import { ScoreboardTableComponent } from '@sp-components/scoreboard-table/scoreboard-table.component';
 import { ENVIRONMENT } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,7 +28,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomePageComponent,
     MainComponent,
     PageComponent,
-    ScoreboardPageComponent
+    ScoreboardPageComponent,
+    ScoreboardTableComponent
   ],
   imports: [
     AngularFireModule.initializeApp(ENVIRONMENT.firebaseConfiguration),
@@ -38,6 +41,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatInputModule,
     MatProgressBarModule,
     MatSnackBarModule,
+    MatTableModule,
     BrowserModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: ENVIRONMENT.isProduction }),
