@@ -11,7 +11,6 @@ import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/mater
 import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { HomePageComponent } from '@sp-components/home-page/home-page.component';
 import { MainComponent } from '@sp-components/main/main.component';
 import { PageComponent } from '@sp-components/page/page.component';
@@ -44,7 +43,6 @@ import { AppRoutingModule } from './app-routing.module';
     MatTableModule,
     BrowserModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: ENVIRONMENT.isProduction }),
     AppRoutingModule
   ],
   providers: [
