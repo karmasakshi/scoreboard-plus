@@ -1,0 +1,2 @@
+- /: START button gets enabled before routing thereby allowing repeated clicks
+- Remove PWA features

@@ -1,4 +1,10 @@
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -24,11 +30,19 @@ import { AppRoutingModule } from './app-routing.module';
     ScoreboardComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(ENVIRONMENT.firebaseConfiguration),
+    AngularFirestoreModule,
+    MatButtonModule,
+    MatCardModule,
+    MatProgressBarModule,
+    MatSnackBarModule,
     BrowserModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: ENVIRONMENT.isProduction }),
     AppRoutingModule
   ],
-  providers: []
+  providers: [
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { horizontalPosition: 'center', duration: 5000, verticalPosition: 'bottom' } },
+  ]
 })
 export class AppModule { }

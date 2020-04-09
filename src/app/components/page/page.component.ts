@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'sp-page',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  constructor() { }
+  @Input() isProgressBarVisible?: boolean = false;
+  @Input() progressBarMode?: 'buffer' | 'indeterminate' = 'indeterminate';
 
-  ngOnInit(): void {
-  }
+  public constructor() { }
+
+  public ngOnInit(): void { }
 
 }

@@ -1,5 +1,6 @@
 export interface Environment {
   firebaseConfiguration: {
+    apiKey: string;
     appId: string;
     authDomain: string;
     databaseURL: string;
