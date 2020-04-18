@@ -8,6 +8,8 @@ import { COLLECTIONS } from '@sp-constants/collections';
 import { Scoreboard } from '@sp-interfaces/scoreboard';
 import { User } from 'firebase';
 import { Participant } from '@sp-interfaces/participant';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { RoundScoresBottomSheetComponent } from '@sp-components/round-scores-bottom-sheet/round-scores-bottom-sheet.component';
 
 @Component({
   selector: 'sp-scoreboard-page',
@@ -29,8 +31,15 @@ export class ScoreboardPageComponent implements OnInit {
     private angularFirestore: AngularFirestore,
     private matSnackBar: MatSnackBar,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private roundScoresBottomSheet: MatBottomSheet
   ) { }
+
+  public addRoundScores(): void {
+
+    this.roundScoresBottomSheet.open(RoundScoresBottomSheetComponent, { data: Object.assign({}, this.scoreboard) });
+
+  }
 
   public ngOnInit(): void {
 
@@ -41,7 +50,7 @@ export class ScoreboardPageComponent implements OnInit {
     // this.scoreboard;
 
     this.scoreboardFormGroup = new FormGroup({
-      title: new FormControl('Antakshari')
+      title: new FormControl('Game')
     });
 
     this.participantFormGroup = new FormGroup({
@@ -167,12 +176,6 @@ export class ScoreboardPageComponent implements OnInit {
       }
 
     }
-
-  }
-
-  public addRoundScores(): void {
-
-    // open bottom sheet
 
   }
 

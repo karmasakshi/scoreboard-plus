@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -38,6 +39,7 @@ import { RoundScoresBottomSheetComponent } from '@sp-components/round-scores-bot
     AngularFireModule.initializeApp(ENVIRONMENT.firebaseConfiguration),
     AngularFirestoreModule,
     ReactiveFormsModule,
+    MatBottomSheetModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,

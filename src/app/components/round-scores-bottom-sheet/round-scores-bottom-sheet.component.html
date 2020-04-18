@@ -1,1 +1,24 @@
-<p>round-scores-bottom-sheet works!</p>
+<form [formGroup]="roundScoresFormGroup" (ngSubmit)="saveRoundScores()">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Round Number:</mat-label>
+    <input matInput type="number" formControlName="roundNumber">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Round Name:</mat-label>
+    <input matInput type="text" formControlName="roundName">
+  </mat-form-field>
+
+  <div *ngFor="let participant of data.participants">
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{participant.name}}:</mat-label>
+      <input matInput type="number" [formControlName]="participant.id">
+    </mat-form-field>
+
+  </div>
+
+  <button color="primary" mat-stroked-button type="submit">SAVE ROUND SCORES</button>
+
+</form>

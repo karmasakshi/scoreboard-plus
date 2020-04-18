@@ -10,8 +10,11 @@
 - Copying URL
 - Share sheet
 - Responsiveness
+- Ranking
+- history on home page below hero
 - Sharing ranking to WhatsApp
 - Header and branding
+- Move editor to a separate component
 - SEO text
 - Translations
 - Deleting scoreboard
