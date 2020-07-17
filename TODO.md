@@ -1,0 +1,28 @@
+- /: START button gets enabled before routing thereby allowing repeated clicks
+- Total column
+- Ability to pin a column
+- Adding players
+- Adding scores
+- Removing players
+- Favicons
+- Social tags
+- Lint
+- Copying URL
+- Share sheet
+- Responsiveness
+- Ranking
+- history on home page below hero
+- Sharing ranking to WhatsApp
+- Header and branding
+- Move editor to a separate component
+- SEO text
+- Translations
+- Deleting scoreboard
+- console checking
+- Performance module
+- Firestore rules
+- Smaller screen hero overflowing
+- Snackbar button color
+- Accessibility
+- Update script
+- Release script

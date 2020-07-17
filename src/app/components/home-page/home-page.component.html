@@ -1,0 +1,53 @@
+<sp-page [isProgressBarVisible]="isComponentLoading" [progressBarMode]="progressBarMode">
+
+  <mat-card>
+
+    <img style="max-width: 480px; margin: 24px auto; display: block;" mat-card-image src="assets/hero.svg">
+
+    <mat-card-content class="sp-centered-text">
+
+      <h1 class="mat-display-1" style="margin: 0;">Scoreboard Plus</h1>
+      <h3>It just works.</h3>
+
+      <button (click)="getNewScoreboard()" color="primary" [disabled]="isComponentLoading" mat-raised-button>START</button>
+
+    </mat-card-content>
+
+  </mat-card>
+
+  <mat-card style="margin-top: 24px;">
+    <mat-card-header>
+      <mat-card-title>Realtime & Fast</mat-card-title>
+      <mat-card-subtitle>Everyone gets updated scores the moment you publish them.</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card style="margin-top: 24px;">
+    <mat-card-header>
+      <mat-card-title>No Sign-In / Sign-Up</mat-card-title>
+      <mat-card-subtitle>Everyone can create and run a scoreboard without signing-up or signing-in.</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card style="margin-top: 24px;">
+    <mat-card-header>
+      <mat-card-title>Automatic Read-Only</mat-card-title>
+      <mat-card-subtitle>Only the device on which the scoreboard is created gets the right to edit. Everyone else is a spectator.</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card style="margin-top: 24px;">
+    <mat-card-header>
+      <mat-card-title>Ad-Free</mat-card-title>
+      <mat-card-subtitle>No annoying ads.</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card style="margin-top: 24px;">
+    <mat-card-header>
+      <mat-card-title>Private or Public - You Choose</mat-card-title>
+      <mat-card-subtitle>Scoreboard you create can be deleted by you at any time.</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+</sp-page>
